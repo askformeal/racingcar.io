@@ -61,7 +61,7 @@ class Main:
         self.timer+=1
 
     def draw_score(self):
-        self.textsurface = self.font.render(str(self.score), False, (0, 0, 0))
+        self.textsurface = self.font.render(str(self.score), False, (255, 255, 255))
         self.screen.blit(self.textsurface,(0,0))
         
     def update_enemy(self):

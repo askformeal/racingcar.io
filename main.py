@@ -66,7 +66,7 @@ class Main:
         
     def update_enemy(self):
         self.enemies.update()
-        if self.timer%700 == 0:
+        if self.timer%700 == 0 and self.timer > 1200:
             self.enemies.add(Enemy(self))
         for enemy in self.enemies:
             if enemy.rect.y >= self.settings['screen_height']:

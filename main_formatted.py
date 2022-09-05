@@ -102,7 +102,7 @@ class Main:
         elif event == pygame.K_d:
             self.player.move_right = True
         elif event == pygame.K_t:
-            print(self.score)
+            print('''Game made by Li Muzhi, @askformeal on Github. Images and sound effects from @sipspatidar's repository "car_racing". Get permission before use.''')
 
     def check_key_up(self,event):
         if event == pygame.K_a:
@@ -160,4 +160,3 @@ class Main:
 if __name__ == '__main__':
     main = Main()
     main.run()
-    

@@ -48,7 +48,7 @@ class Main:
         elif event == pygame.K_d:
             self.player.move_right = True
         elif event == pygame.K_t:
-            print(self.score)
+            print('''Game made by Li Muzhi, @askformeal on Github. Images and sound effects from @sipspatidar's repository "car_racing". Get permission before use.''')
 
     def check_key_up(self,event):
         if event == pygame.K_a:
@@ -73,7 +73,6 @@ class Main:
                 enemy.kill()
                 self.score += 1
         if pygame.sprite.spritecollideany(self.player, self.enemies):
-            print('game_over')
             self.running = False
 
     def update(self):

@@ -13,6 +13,7 @@ class Enemy(Sprite):
         self.y = -100
     
     def update(self):
-        self.screen.blit(self.image,(self.rect.x,self.y))
-        self.y += 1.3
-        self.rect.y = self.y
+        if self.main.timer > 1200:
+            self.screen.blit(self.image,(self.rect.x,self.y))
+            self.y += 1.3
+            self.rect.y = self.y

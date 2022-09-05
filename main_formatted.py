@@ -44,9 +44,10 @@ class Enemy(Sprite):
         self.y = -100
     
     def update(self):
-        self.screen.blit(self.image,(self.rect.x,self.y))
-        self.y += 1.3
-        self.rect.y = self.y
+        if self.main.timer > 1200:
+            self.screen.blit(self.image,(self.rect.x,self.y))
+            self.y += 1.3
+            self.rect.y = self.y
 
 class Background:
     def __init__(self,main):
@@ -63,8 +64,7 @@ class Background:
 
 class Main:
     def __init__(self):
-        with open('settings.json') as f:
-            self.settings = json.load(f)
+        self.settings = {"screen_width":558,"screen_height":586,"bg_color":[255,255,255]}
         self.screen = pygame.display.set_mode((self.settings['screen_width'],
         self.settings['screen_height']))
 
@@ -120,7 +120,7 @@ class Main:
         
     def update_enemy(self):
         self.enemies.update()
-        if self.timer%700 == 0:
+        if self.timer%700 == 0 and self.timer > 1200:
             self.enemies.add(Enemy(self))
         for enemy in self.enemies:
             if enemy.rect.y >= self.settings['screen_height']:
